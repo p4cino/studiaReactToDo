@@ -13,9 +13,13 @@ interface TodoListProps {
 }
 
 function TodoList({ todos, toggleComplete, deleteTodo }: TodoListProps) {
+  const sortedTodos = [...todos].sort(
+    (a, b) => todos.indexOf(b) - todos.indexOf(a),
+  );
+
   return (
-    <ul>
-      {todos.map((todo, index) => (
+    <ul className="w-full rounded-lg mt-2 mb-3 text-blue-800">
+      {sortedTodos.map((todo, index) => (
         <TodoItem
           key={index}
           todo={todo}

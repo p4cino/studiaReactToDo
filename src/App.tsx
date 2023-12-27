@@ -48,14 +48,19 @@ function App() {
   };
 
   return (
-    <div>
+    <main className="container mx-auto py-8">
+      <section className="bg-white dark:bg-gray-900">
+        <h2 className="mb-4 text-center text-4xl tracking-tight font-bold text-gray-900 dark:text-white">
+          ToDo Wojciech Puzio
+        </h2>
+      </section>
       <TodoForm addTodo={addTodo} />
       <TodoList
         todos={todos}
         toggleComplete={toggleComplete}
         deleteTodo={deleteTodo}
       />
-    </div>
+    </main>
   );
 }
 
